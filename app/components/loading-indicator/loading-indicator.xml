@@ -1,0 +1,6 @@
+<AbsoluteLayout class="w-full h-full">
+    <StackLayout horizontalAlignment="center" verticalAlignment="center">
+        <ActivityIndicator busy="true" />
+        <Label text="{{ loadingMessage || 'Loading...' }}" class="text-center mt-2" />
+    </StackLayout>
+</AbsoluteLayout>

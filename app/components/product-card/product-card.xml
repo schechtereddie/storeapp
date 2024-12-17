@@ -1,0 +1,8 @@
+<GridLayout columns="auto, *" rows="auto" class="list-group-item p-4">
+    <Image src="{{ imageUrl }}" width="80" height="80" class="rounded-lg" col="0" />
+    <StackLayout col="1" class="ml-4">
+        <Label text="{{ name }}" class="font-bold text-lg" />
+        <Label text="{{ description }}" class="text-gray-600" textWrap="true" />
+        <Label text="{{ formattedPrice }}" class="text-green-600 font-bold" />
+    </StackLayout>
+</GridLayout>

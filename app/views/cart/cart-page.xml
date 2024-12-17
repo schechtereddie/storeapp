@@ -1,0 +1,40 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="onNavigatingTo">
+    <ActionBar title="Shopping Cart">
+        <NavigationButton visibility="{{ items.length > 0 ? 'visible' : 'collapsed' }}" 
+                         text="Clear" tap="{{ onClearCart }}" />
+    </ActionBar>
+    
+    <GridLayout rows="*, auto">
+        <ListView items="{{ items }}" itemTap="{{ onItemTap }}" row="0"
+                 visibility="{{ items.length > 0 ? 'visible' : 'collapsed' }}">
+            <ListView.itemTemplate>
+                <GridLayout columns="*, auto, auto" rows="auto" class="p-4 border-b">
+                    <StackLayout col="0">
+                        <Label text="{{ productName }}" class="font-bold" />
+                        <Label text="{{ customizationsText }}" class="text-sm text-gray-600" textWrap="true" />
+                        <Label text="{{ '$' + totalPrice }}" class="text-green-600" />
+                    </StackLayout>
+                    <StackLayout orientation="horizontal" col="1" class="mx-2">
+                        <Button text="-" tap="{{ $parent.onDecrementQuantity }}" class="w-8" />
+                        <Label text="{{ quantity }}" class="text-center w-8" />
+                        <Button text="+" tap="{{ $parent.onIncrementQuantity }}" class="w-8" />
+                    </StackLayout>
+                    <Button text="✕" tap="{{ $parent.onRemoveItem }}" 
+                            class="text-red-500" col="2" />
+                </GridLayout>
+            </ListView.itemTemplate>
+        </ListView>
+
+        <StackLayout row="0" visibility="{{ items.length === 0 ? 'visible' : 'collapsed' }}"
+                     class="p-4 text-center">
+            <Label text="Your cart is empty" class="text-xl text-gray-500" />
+            <Button text="Start Shopping" tap="{{ onStartShopping }}" class="btn btn-primary mt-4" />
+        </StackLayout>
+
+        <StackLayout row="1" class="p-4 bg-white border-t"
+                     visibility="{{ items.length > 0 ? 'visible' : 'collapsed' }}">
+            <Label text="{{ 'Total: $' + totalAmount }}" class="text-xl font-bold" />
+            <Button text="Checkout" tap="{{ onCheckout }}" class="btn btn-primary mt-2" />
+        </StackLayout>
+    </GridLayout>
+</Page>

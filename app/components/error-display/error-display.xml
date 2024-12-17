@@ -1,0 +1,4 @@
+<StackLayout class="p-4 bg-red-100 rounded-lg">
+    <Label text="{{ errorMessage }}" class="text-red-600" textWrap="true" />
+    <Button text="Dismiss" tap="{{ onDismiss }}" class="btn btn-sm btn-outline mt-2" />
+</StackLayout>

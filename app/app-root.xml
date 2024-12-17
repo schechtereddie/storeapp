@@ -1,0 +1,9 @@
+<Frame defaultPage="views/product-list/product-list-page">
+    <Frame.actionBar>
+        <ActionBar title="Product Showcase">
+            <ActionBar.actionItems>
+                <ActionItem text="Cart" tap="onCartTap" ios.position="right" />
+            </ActionBar.actionItems>
+        </ActionBar>
+    </Frame.actionBar>
+</Frame>

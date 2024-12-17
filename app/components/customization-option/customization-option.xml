@@ -1,0 +1,12 @@
+<StackLayout class="p-2">
+    <Label text="{{ name }}" class="font-bold" />
+    <WrapLayout>
+        <Repeater items="{{ options }}">
+            <Repeater.itemTemplate>
+                <Button text="{{ $value }}" 
+                        tap="{{ $parents['ListView'].onOptionSelect }}" 
+                        class="{{ isSelected ? 'btn-primary' : 'btn-outline' }} m-1 btn-sm" />
+            </Repeater.itemTemplate>
+        </Repeater>
+    </WrapLayout>
+</StackLayout>
